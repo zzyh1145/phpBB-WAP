@@ -184,7 +184,7 @@ if(!$db->db_connect_id)
 	die('<!DOCTYPE HTML><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>提示</title><style type="text/css">@charset "utf-8";*{margin:0;padding:0;}body{margin:0 auto;max-width:640px;font-family:"Century Gothic","Microsoft yahei";background-color:#F9F9F9;}#wrap{background-color:#FFF;width:640px;}.error{padding:20px;margin:0;border-style:solid;border-width:1px;border-color:#000;}.main{padding:115px 0 6px 0;}</style></head><body><div id="wrap"><div class="main"><div class="error"><p style="color:red;">无法链接到数据库，请检查您的数据库配置文件是否正确</p></div></div><div></body></html>');
 }
 
-$db->sql_query('SET NAMES utf8');
+$db->sql_query('SET NAMES utf8mb4');
 
 // 为了安全起见，注销数据库密码这个变量
 unset($dbpasswd);

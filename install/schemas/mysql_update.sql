@@ -7,7 +7,7 @@ CREATE TABLE phpbb_profile_guestbook (
   master_look tinyint(1) NOT NULL DEFAULT '0',
   message text NOT NULL,
   PRIMARY KEY (gb_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_articles (
   article_id mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -19,14 +19,14 @@ CREATE TABLE phpbb_articles (
   article_approval tinyint(1) NOT NULL DEFAULT '0',
   article_text text NOT NULL,
   PRIMARY KEY (article_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_articles_class (
   ac_id mediumint(8) NOT NULL AUTO_INCREMENT,
   ac_name varchar(255) NOT NULL,
   ac_sort smallint(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (ac_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_topic_collect (
   tc_id mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -34,7 +34,7 @@ CREATE TABLE phpbb_topic_collect (
   tc_user mediumint(8) NOT NULL,
   tc_title varchar(255) NOT NULL,
   PRIMARY KEY (tc_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_ucp_main (
   um_id mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -43,7 +43,7 @@ CREATE TABLE phpbb_ucp_main (
   um_header text NOT NULL,
   um_body text NOT NULL,
   PRIMARY KEY (um_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_styles (
   style_id mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -53,13 +53,13 @@ CREATE TABLE phpbb_styles (
   style_copyright varchar(255) NOT NULL,
   PRIMARY KEY (style_id),
   UNIQUE KEY style_path (style_path)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE phpbb_download (
   download_user mediumint(8) NOT NULL,
   download_attach mediumint(8) NOT NULL,
   download_time int(11) NOT NULL default '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO phpbb_styles (style_id, style_name, style_path, style_version, style_copyright) VALUES (1, 'Gray', 'Gray', '适用于6.1正式版', 'phpBB-WAP Group');
 
