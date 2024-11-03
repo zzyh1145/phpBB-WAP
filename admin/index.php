@@ -346,7 +346,7 @@ elseif( isset($_GET['pane']) && $_GET['pane'] == 'statistic' )
 					'USERNAME' 			=> $username, 
 					'FORUM_LOCATION' 	=> $location,
 					'IP_ADDRESS' 		=> $reg_ip, 
-					'U_WHOIS_IP' 		=> 'http://www.ip138.com/ips138.asp?ip=' . $reg_ip, 
+					'U_WHOIS_IP' 		=> 'https://ping0.cc/ip/' . $reg_ip, 
 					'U_USER_PROFILE' 	=> append_sid('admin_users.php?mode=edit&amp;' . POST_USERS_URL . '=' . $onlinerow_reg[$i]['user_id']))
 				);
 			}
@@ -403,7 +403,7 @@ elseif( isset($_GET['pane']) && $_GET['pane'] == 'statistic' )
 				'FORUM_LOCATION'	=> $location,
 				'IP_ADDRESS' 		=> $guest_ip, 
 
-				'U_WHOIS_IP' 		=> 'http://www.ip138.com/ips138.asp?ip=' . $guest_ip)
+				'U_WHOIS_IP' 		=> 'https://ping0.cc/ip/' . $guest_ip)
 			);
 		}
 

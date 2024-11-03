@@ -197,23 +197,45 @@ $board_config = $cache->export('global_config');
 
 $session = new Session($db);
 
-// 获取用户Agent、IP
-$http_user_agent 	= (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : getenv('HTTP_USER_AGENT');
-if( strpos($http_user_agent, 'MSIE') ){
-	$user_agent = 'Internet Explorer';
-}else if( strpos($http_user_agent, 'Firefox') ){
-	$user_agent = 'Firefox';
-}else if( strpos($http_user_agent, 'Chrome') ){
-	$user_agent = 'Chrome';
-}else if( strpos($http_user_agent, 'Safari') ){
-	$user_agent = 'Safari';
-}else if( strpos($http_user_agent, 'Opera') ){
-	$user_agent = 'Opera';
-}else{
-	$user_agent = strtok($http_user_agent,'/');
+$http_user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : getenv('HTTP_USER_AGENT');
+
+if (strpos($http_user_agent, 'Edg') !== false) {
+    $user_agent = 'Microsoft Edge';
+} elseif (strpos($http_user_agent, 'MSIE') !== false || strpos($http_user_agent, 'Trident') !== false) {
+    $user_agent = 'Internet Explorer';
+} elseif (strpos($http_user_agent, 'Firefox') !== false) {
+    $user_agent = 'Firefox';
+} elseif (strpos($http_user_agent, 'Chrome') !== false && strpos($http_user_agent, 'Safari') !== false && strpos($http_user_agent, 'Edg') === false) {
+    $user_agent = 'Chrome';
+} elseif (strpos($http_user_agent, 'Safari') !== false && strpos($http_user_agent, 'Chrome') === false && strpos($http_user_agent, 'Edg') === false) {
+    $user_agent = 'Safari';
+} elseif (strpos($http_user_agent, 'Opera') !== false || strpos($http_user_agent, 'OPR') !== false) {
+    $user_agent = 'Opera';
+} elseif (strpos($http_user_agent, 'SamsungBrowser') !== false) {
+    $user_agent = 'Samsung Internet';
+} elseif (strpos($http_user_agent, 'YaBrowser') !== false) {
+    $user_agent = 'Yandex Browser';
+} elseif (strpos($http_user_agent, 'Vivaldi') !== false) {
+    $user_agent = 'Vivaldi';
+} elseif (strpos($http_user_agent, 'UC Browser') !== false) {
+    $user_agent = 'UC Browser';
+} elseif (strpos($http_user_agent, 'QQBrowser') !== false) {
+    $user_agent = 'QQ Browser';
+} else {
+    $user_agent = strtok($http_user_agent, '/');
 }
-	
-$client_ip 		= ( !empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( ( !empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] : getenv('REMOTE_ADDR') );
+//获取cdn真实的ip
+$client_ip = '';
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $client_ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $client_ip = trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
+} elseif (!empty($_SERVER['REMOTE_ADDR'])) {
+    $client_ip = $_SERVER['REMOTE_ADDR'];
+} else {
+    $client_ip = getenv('REMOTE_ADDR');
+}
+$client_ip = filter_var($client_ip, FILTER_VALIDATE_IP) ?: '无效的 IP 地址';
 $user_ip 		= encode_ip($client_ip, false);
 
 if( $board_config['board_disable'] && !defined("IN_ADMIN") && !defined("IN_LOGIN") )
