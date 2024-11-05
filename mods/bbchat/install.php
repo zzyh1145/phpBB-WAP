@@ -25,7 +25,7 @@ $sql='CREATE TABLE phpbb_shout (
   enable_smilies tinyint(1) NOT NULL,
   shout_bbcode_uid varchar(10) NOT NULL,
   KEY shout_id (shout_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;';
 // SQL 检测
 
 run_query($sql);
