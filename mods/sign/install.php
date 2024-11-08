@@ -21,7 +21,7 @@ CREATE TABLE phpbb_sign (
   PRIMARY KEY  (sign_id),
   KEY sign_user_id (sign_user_id),
   KEY sign_time (sign_time)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL;
 
 run_query($sql);//执行SQL

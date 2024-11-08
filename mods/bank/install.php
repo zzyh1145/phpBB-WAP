@@ -26,13 +26,13 @@ CREATE TABLE `phpbb_bank` (
   `fees` char(5) NOT NULL DEFAULT 'on',
   PRIMARY KEY (`user_id`),
   KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `phpbb_bank_config` (
   `config_name` varchar(255) NOT NULL,
   `config_value` varchar(255) NOT NULL,
   PRIMARY KEY (`config_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `phpbb_bank_config` (`config_name`, `config_value`) VALUES ('bankinterest', '2');
 INSERT INTO `phpbb_bank_config` (`config_name`, `config_value`) VALUES ('bankfees', '2');

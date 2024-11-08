@@ -19,7 +19,7 @@
 
 <!-- BEGIN shoutrow -->
 				<div class="module {shoutrow.ROW_CLASS}">
-					{shoutrow.SHOUT_USERNAME}{shoutrow.POSTER_ONLINE_STATUS}说：{shoutrow.SHOUT} ---{TIME}
+					{shoutrow.SHOUT_USERNAME}{shoutrow.POSTER_ONLINE_STATUS}说：{shoutrow.SHOUT} ---{shoutrow.TIME}
 				</div>
 <!-- END shoutrow -->
 				{PAGINATION}
