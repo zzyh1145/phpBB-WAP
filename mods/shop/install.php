@@ -19,7 +19,7 @@ CREATE TABLE `phpbb_shop_config` (
   `config_name` varchar(25) NOT NULL,
   `config_value` varchar(255) NOT NULL,
   PRIMARY KEY (`config_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `phpbb_shop_config` (`config_name`, `config_value`) VALUES ('top_ad', '100');
 INSERT INTO `phpbb_shop_config` (`config_name`, `config_value`) VALUES('foot_ad', '100');
@@ -41,7 +41,7 @@ CREATE TABLE `phpbb_shop_ad` (
   `ad_time` int(11) NOT NULL,
   `ad_url` varchar(255) NOT NULL,
   PRIMARY KEY (`ad_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `phpbb_shop_good` (
   `good_id` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -49,14 +49,14 @@ CREATE TABLE `phpbb_shop_good` (
   `good_url` varchar(255) NOT NULL,
   `good_points` int(11) NOT NULL,
   PRIMARY KEY (`good_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `phpbb_shop_qq` (
   `qq` int(11) NOT NULL,
   `points` int(11) NOT NULL,
   `password` varchar(255) NOT NULL,
   UNIQUE KEY `qq` (`qq`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL;
 
 run_query($sql);

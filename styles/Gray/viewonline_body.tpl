@@ -11,7 +11,7 @@
 					</div>
 					<div class="left">
 						<div>
-							<a href="{online_row.U_USER_PROFILE}">{online_row.USERNAME}</a>（<a href="http://www.ip138.com/ips138.asp?ip={online_row.PREV_IP}">{online_row.PREV_IP}</a>）
+							<a href="{online_row.U_USER_PROFILE}">{online_row.USERNAME}</a>（<a href="https://ping0.cc/ip/{online_row.PREV_IP}">{online_row.PREV_IP}</a>）
 						</div>
 						<p>在 {online_row.LASTUPDATE} 前访问了 <a href="{online_row.U_FORUM_LOCATION}">{online_row.FORUM_LOCATION}</a></p>
 					</div>
