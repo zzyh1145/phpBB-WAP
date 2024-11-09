@@ -4,8 +4,7 @@
 
 本项目由[eKing](https://github.com/eKing-one)于 2014年 开发的php论坛触屏版
 
-取自于 [phpbb-wap.ru](phpbb-wap.ru) 中的 phpBB-WAP v8 版本，而 phpBB-WAP 是世界上知
-名的 phpBB 论坛开源软件的移动终端版本
+取自于 [phpbb-wap.ru](phpbb-wap.ru) 中的 phpBB-WAP v8 版本，而 phpBB-WAP 是世界上知名的 phpBB 论坛开源软件的移动终端版本
 
 名字为 PHP Bulletin Board Wireless Application Protocol 的缩写
 
