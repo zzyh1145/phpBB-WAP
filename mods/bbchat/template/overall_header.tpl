@@ -8,6 +8,7 @@
 		<!-- END use_tpl_css -->
 		{MODULE_HEAD}
 		<title>{PAGE_TITLE}</title>
+		{FREE_HEAD}
 	</head>
 	<body>
 		<div id="wrap">
